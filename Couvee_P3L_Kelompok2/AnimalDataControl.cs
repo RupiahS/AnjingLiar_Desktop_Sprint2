@@ -22,7 +22,7 @@ namespace Couvee_P3L_Kelompok2
         public void tampil()
         {
             con.Open();
-            string sql = "select a.animal_id, c.customer_name, att.type_name, a.animal_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.DELETED_AT is NULL ORDER BY a.CREATED_AT DESC";
+            string sql = "select a.animal_id, a.animal_name, c.customer_name, att.type_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.DELETED_AT is NULL";
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader Reader = cmd.ExecuteReader();
 
@@ -65,7 +65,7 @@ namespace Couvee_P3L_Kelompok2
             if (textSearch.Text != "")
             {
                 con.Open();
-                string sql = "select a.animal_id, c.customer_name, att.type_name, a.animal_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.animal_name = '" + textSearch.Text + "' and a.DELETED_AT is NULL";
+                string sql = "select a.animal_id, a.animal_name, c.customer_name, att.type_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.animal_name = '" + textSearch.Text + "' and a.DELETED_AT is NULL";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader Reader = cmd.ExecuteReader();
 
@@ -92,7 +92,7 @@ namespace Couvee_P3L_Kelompok2
 
         private void textSearch_Enter(object sender, EventArgs e)
         {
-            if (textSearch.Text == "Search by Name")
+            if (textSearch.Text == "Search by Animal Name")
             {
                 textSearch.Text = "";
                 textSearch.ForeColor = Color.Black;
@@ -102,7 +102,7 @@ namespace Couvee_P3L_Kelompok2
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             con.Open();
-            string sql5 = "select * from `customers` where customer_name= '" + textCust.Text + "'";
+            string sql5 = "select * from `customers` where customer_name= '" + textCust.Text + "' and DELETED_AT is NULL";
             MySqlCommand cmd5 = new MySqlCommand(sql5, con);
             MySqlDataReader Reader5 = cmd5.ExecuteReader();
             
@@ -116,7 +116,7 @@ namespace Couvee_P3L_Kelompok2
 
             con.Open();
 
-            string sql6 = "select * from `animal_types` where type_name= '" + textType.Text + "'";
+            string sql6 = "select * from `animal_types` where type_name= '" + textType.Text + "' and DELETED_AT is NULL";
             MySqlCommand cmd6 = new MySqlCommand(sql6, con);
             MySqlDataReader Reader6 = cmd6.ExecuteReader();
 
@@ -143,7 +143,7 @@ namespace Couvee_P3L_Kelompok2
 
                 MessageBox.Show("Animal Added!");
 
-                string sql = "select a.animal_id, c.customer_name, att.type_name, a.animal_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.DELETED_AT is NULL ORDER BY a.CREATED_AT DESC";
+                string sql = "select a.animal_id, a.animal_name, c.customer_name, att.type_name, a.animal_birth from animals a join customers c on a.customer_id = c.customer_id join animal_types att on a.type_id = att.type_id where a.DELETED_AT is NULL ORDER BY a.CREATED_AT DESC";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader Reader = cmd.ExecuteReader();
 
@@ -166,7 +166,7 @@ namespace Couvee_P3L_Kelompok2
 
         public void fillComboType()
         {
-            string sql7 = "select * from animal_types";
+            string sql7 = "select * from animal_types where DELETED_AT is NULL";
             MySqlCommand cmd7 = new MySqlCommand(sql7, con);
             MySqlDataReader Reader7;
             try
@@ -189,7 +189,7 @@ namespace Couvee_P3L_Kelompok2
         {
             if (textSearch.Text == "")
             {
-                textSearch.Text = "Search by Name";
+                textSearch.Text = "Search by Animal Name";
                 textSearch.ForeColor = Color.Silver;
             }
             tampil();
@@ -198,7 +198,7 @@ namespace Couvee_P3L_Kelompok2
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             con.Open();
-            string sql5 = "select * from `customers` where customer_name= '" + textCust.Text + "'";
+            string sql5 = "select * from `customers` where customer_name= '" + textCust.Text + "' and DELETED_AT is NULL";
             MySqlCommand cmd5 = new MySqlCommand(sql5, con);
             MySqlDataReader Reader5 = cmd5.ExecuteReader();
 
@@ -212,7 +212,7 @@ namespace Couvee_P3L_Kelompok2
 
             con.Open();
 
-            string sql6 = "select * from `animal_types` where type_name= '" + textType.Text + "'";
+            string sql6 = "select * from `animal_types` where type_name= '" + textType.Text + "' and DELETED_AT is NULL";
             MySqlCommand cmd6 = new MySqlCommand(sql6, con);
             MySqlDataReader Reader6 = cmd6.ExecuteReader();
 
@@ -246,9 +246,9 @@ namespace Couvee_P3L_Kelompok2
         private void listView1_Click(object sender, EventArgs e)
         {
             textAnimalID.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            textCust.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            textType.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            textAnimalName.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            textAnimalName.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            textCust.Text = listView1.SelectedItems[0].SubItems[2].Text;
+            textType.Text = listView1.SelectedItems[0].SubItems[3].Text;    
             dateTimePicker1.Text = listView1.SelectedItems[0].SubItems[4].Text;
         }
 
@@ -298,7 +298,7 @@ namespace Couvee_P3L_Kelompok2
 
         public void fillComboCust()
         {
-            string sql8 = "select * from customers";
+            string sql8 = "select * from customers where DELETED_AT is NULL";
             MySqlCommand cmd8 = new MySqlCommand(sql8, con);
             MySqlDataReader Reader8;
             try

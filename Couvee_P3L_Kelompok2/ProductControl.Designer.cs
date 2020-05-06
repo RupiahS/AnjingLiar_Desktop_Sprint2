@@ -56,6 +56,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Image";
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Product ID";
@@ -64,6 +68,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Product Name";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 150;
             // 
             // columnHeader3
@@ -293,10 +298,6 @@
             this.buttonSortQuantity.Text = "Sort by Quantity";
             this.buttonSortQuantity.UseVisualStyleBackColor = false;
             this.buttonSortQuantity.Click += new System.EventHandler(this.buttonSortQuantity_Click);
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Image";
             // 
             // textSearch
             // 

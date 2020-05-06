@@ -19,7 +19,7 @@ namespace Couvee_P3L_Kelompok2
         public void tampil()
         {
             con.Open();
-            string sql = "select * from suppliers where DELETED_AT is NULL ORDER BY CREATED_AT DESC";
+            string sql = "select * from suppliers where DELETED_AT is NULL";
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader Reader = cmd.ExecuteReader();
 
@@ -170,52 +170,7 @@ namespace Couvee_P3L_Kelompok2
             clear();
         }
 
-        private void textSearch_TextChanged(object sender, EventArgs e)
-        {  
-
-            if (textSearch.Text == "")
-            {
-                con.Open();
-                string sql = "select * from suppliers where DELETED_AT is NULL";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader Reader = cmd.ExecuteReader();
-
-                listView1.Items.Clear();
-
-                while (Reader.Read())
-                {
-                    ListViewItem lv = new ListViewItem(Reader.GetInt32(0).ToString());
-                    lv.SubItems.Add(Reader.GetString(2));
-                    lv.SubItems.Add(Reader.GetString(3));
-                    lv.SubItems.Add(Reader.GetString(4));
-                    listView1.Items.Add(lv);
-                }
-                Reader.Close();
-                cmd.Dispose();
-                con.Close();
-            }
-            else
-            {
-                con.Open();
-                string sql = "select * from suppliers where supplier_name = '"+textSearch.Text+ "' and DELETED_AT is NULL";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader Reader = cmd.ExecuteReader();
-
-                listView1.Items.Clear();
-
-                while (Reader.Read())
-                {
-                    ListViewItem lv = new ListViewItem(Reader.GetInt32(0).ToString());
-                    lv.SubItems.Add(Reader.GetString(2));
-                    lv.SubItems.Add(Reader.GetString(3));
-                    lv.SubItems.Add(Reader.GetString(4));
-                    listView1.Items.Add(lv);
-                }
-                Reader.Close();
-                cmd.Dispose();
-                con.Close();
-            }
-        }
+     
 
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -237,6 +192,8 @@ namespace Couvee_P3L_Kelompok2
                 {
                     ListViewItem lv = new ListViewItem(Reader.GetInt32(0).ToString());
                     lv.SubItems.Add(Reader.GetString(2));
+                    lv.SubItems.Add(Reader.GetString(3));
+                    lv.SubItems.Add(Reader.GetString(4));
                     listView1.Items.Add(lv);
                 }
                 Reader.Close();

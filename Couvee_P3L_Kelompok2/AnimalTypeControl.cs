@@ -18,7 +18,7 @@ namespace Couvee_P3L_Kelompok2
         public void tampil()
         {
             con.Open();
-            string sql = "select * from animal_types where DELETED_AT is null ORDER BY CREATED_AT DESC";
+            string sql = "select * from animal_types where DELETED_AT is null";
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader Reader = cmd.ExecuteReader();
 

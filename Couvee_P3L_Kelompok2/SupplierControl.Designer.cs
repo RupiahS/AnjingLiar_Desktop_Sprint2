@@ -214,22 +214,25 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Supplier ID";
-            this.columnHeader1.Width = 70;
+            this.columnHeader1.Width = 90;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Supplier Name";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 113;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Address";
-            this.columnHeader3.Width = 180;
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 118;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Phone Number";
-            this.columnHeader4.Width = 100;
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 110;
             // 
             // textSearch
             // 

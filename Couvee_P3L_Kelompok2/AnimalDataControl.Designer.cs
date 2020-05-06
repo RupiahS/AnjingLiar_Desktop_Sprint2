@@ -71,7 +71,7 @@
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(239, 36);
             this.textSearch.TabIndex = 43;
-            this.textSearch.Text = "Search by Name";
+            this.textSearch.Text = "Search by Animal Name";
             this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             this.textSearch.Enter += new System.EventHandler(this.textSearch_Enter);
             this.textSearch.Leave += new System.EventHandler(this.textSearch_Leave);
@@ -104,19 +104,19 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Customer";
+            this.columnHeader6.Text = "Animal Name";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 85;
+            this.columnHeader6.Width = 102;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Type";
+            this.columnHeader7.Text = "Customer";
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 98;
+            this.columnHeader7.Width = 116;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Animal Name";
+            this.columnHeader8.Text = "Type";
             this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader8.Width = 103;
             // 
@@ -140,7 +140,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(625, 225);
+            this.label3.Location = new System.Drawing.Point(625, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 25);
             this.label3.TabIndex = 50;
@@ -150,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(625, 270);
+            this.label4.Location = new System.Drawing.Point(625, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 25);
             this.label4.TabIndex = 51;
@@ -160,7 +160,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(625, 313);
+            this.label5.Location = new System.Drawing.Point(625, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 25);
             this.label5.TabIndex = 52;
@@ -170,7 +170,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(625, 367);
+            this.label6.Location = new System.Drawing.Point(625, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 25);
             this.label6.TabIndex = 53;
@@ -179,7 +179,7 @@
             // 
             // textAnimalName
             // 
-            this.textAnimalName.Location = new System.Drawing.Point(807, 304);
+            this.textAnimalName.Location = new System.Drawing.Point(807, 221);
             this.textAnimalName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAnimalName.Multiline = true;
             this.textAnimalName.Name = "textAnimalName";
@@ -190,8 +190,8 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(807, 369);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(807, 358);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.MaxDate = new System.DateTime(2999, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(191, 22);
@@ -212,7 +212,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(869, 426);
+            this.buttonDelete.Location = new System.Drawing.Point(863, 413);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(95, 48);
@@ -227,7 +227,7 @@
             this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonUpdate.Location = new System.Drawing.Point(769, 426);
+            this.buttonUpdate.Location = new System.Drawing.Point(763, 413);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(95, 48);
@@ -240,7 +240,7 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(669, 426);
+            this.buttonAdd.Location = new System.Drawing.Point(663, 413);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(95, 48);
@@ -265,7 +265,7 @@
             // textCust
             // 
             this.textCust.FormattingEnabled = true;
-            this.textCust.Location = new System.Drawing.Point(807, 226);
+            this.textCust.Location = new System.Drawing.Point(807, 270);
             this.textCust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCust.Name = "textCust";
             this.textCust.Size = new System.Drawing.Size(191, 24);
@@ -275,7 +275,7 @@
             // textType
             // 
             this.textType.FormattingEnabled = true;
-            this.textType.Location = new System.Drawing.Point(807, 270);
+            this.textType.Location = new System.Drawing.Point(807, 314);
             this.textType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textType.Name = "textType";
             this.textType.Size = new System.Drawing.Size(191, 24);

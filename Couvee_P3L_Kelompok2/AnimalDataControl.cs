@@ -51,8 +51,22 @@ namespace Couvee_P3L_Kelompok2
             dateTimePicker1.Text = String.Empty;
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            textCust.Items.Clear();
+            textType.Items.Clear();
+            fillComboType();
+            fillComboCust();
+        }
+
+
         public AnimalDataControl()
         {
+            Timer timer = new Timer();
+            timer.Interval = (5 * 1000); // 5 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
             InitializeComponent();
             tampil();
             fillComboType();
